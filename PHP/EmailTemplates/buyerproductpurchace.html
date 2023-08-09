@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* CSS styling for the email */
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: #f2f2f2;
+        font-size: 14px;
+      }
+
+      .container {
+         width: 400px;
+        margin: auto;
+        background-color: #ffffff;
+        padding: 50px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        color: #333333;
+        text-align: center;
+      }
+
+      .headText {
+        text-align: left;
+        margin-bottom: 20px;
+      }
+
+      table {
+        width: 100%;
+        max-width: 500px;  
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #dddddd;
+      }
+
+      th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+      }
+
+      .total {
+        text-align: right;
+        font-weight: bold;
+      }
+
+      .image {
+        max-width: 80px;
+        max-height: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Order Confirmation</h1>
+      <div class="headText">
+        <h3>Dear {{buyerName}},</h3>
+        <p>
+          Thank you for choosing our store! We are delighted to inform you that
+          your recent order has been successfully processed and confirmed. Below
+          are the details of your purchase
+        </p>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for product in products %}
+          <tr>
+            <td>
+              <img
+                width="40px"
+                height="40px"
+                src="{{imageurl}}{{ product.image }}"
+                alt="{{ product.name }}"
+              />
+            </td>
+            <td>{{ product.name }}</td>
+            <td>&#x20a6;{{ product.price }}</td>
+            <td>{{ product.quantity }}</td>
+            <td>{{ product.total }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <p class="total">Total Amount Paid: &#x20a6;{{totalAmountPaid}}</p>
+      <div class="headText">
+        <p>
+          If you have any questions or need further assistance, feel free to
+          contact our customer support team at <a href="mailto:{{adminEmail}}">{{adminEmail}}</a>. Once again, thank you for choosing us. We look forward to
+          serving you again in the future.
+        </p>
+        <p>
+          Best regards, <br />
+          {{adminName}} <br />
+          Support Team
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

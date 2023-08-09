@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Email Template</title>
+    <link rel="stylesheet" href="../../src/index.css">
+    <style>
+
+      /* CSS styles for the email template */
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+
+      p {
+        margin-bottom: 20px;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+      }
+
+      .footer {
+        margin-top: 40px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to Our Newsletter</h1>
+      <p>Dear {{name}},</p>
+      <p>
+        Thank you for subscribing to our newsletter. We will keep you updated
+        with the latest news and offers.
+      </p>
+      <p>
+        If you have any questions or need assistance, feel free to contact us.
+      </p>
+      <p>
+        <a class="button" href="{{website_url}}">Visit Our Website</a>
+      </p>
+      <div class="footer">
+        <p>Best Regards,<br />Your Company</p>
+      </div>
+    </div>
+  </body>
+</html>

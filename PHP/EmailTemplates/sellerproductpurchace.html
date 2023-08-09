@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* CSS styling for the email */
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: #f2f2f2;
+        font-size: 14px;
+      }
+
+      .container {
+         width: 400px;
+        margin: auto;
+        background-color: #ffffff;
+        padding: 50px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+       h1 {
+        color: #333333;
+        text-align: center;
+      }
+
+      .headText {
+        text-align: left;
+        margin-bottom: 20px;
+      }
+
+      table {
+        width: 100%;
+        max-width: 500px;  
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+      
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #dddddd;
+      }
+
+      th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+      }
+
+      .total {
+        text-align: right;
+        font-weight: bold;
+      }
+
+      .image {
+        max-width: 80px;
+        max-height: 80px;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>New Order</h1>
+      <div class="headText">
+        <h3>Dear {{adminName}},</h3>
+        <p>
+          We hope this email finds you well. We are excited to inform you that a
+          new order has been placed in your store. Please find the details of
+          the order below.
+        </p>
+        <h3>Customer Details</h3>
+        <p>
+          Name: {{buyerName}} <br />
+          Email: {{buyerEmail}} <br />
+          Phone: {{buyerPhone}} <br />
+        </p>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for product in products %}
+          <tr>
+            <td>
+              <img
+                width="40px"
+                height="40px"
+                src="{{imageurl}}{{ product.image }}"
+                alt="{{ product.name }}"
+              />
+            </td>
+            <td>{{ product.name }}</td>
+            <td>&#x20a6;{{ product.price }}</td>
+            <td>{{ product.quantity }}</td>
+            <td>&#x20a6;{{ product.total }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <p class="total">Total Amount Paid: &#x20a6;{{totalAmountPaid}}</p>
+      <div class="headText">
+        <p>
+          Thank you for choosing our platform as your preferred e-commerce
+          solution. If you need any assistance or have inquiries, feel free to
+          contact our support team at
+          <a href="mailto:info@gwlbrandingservices.com.ng"
+            >info@gwlbrandingservices.com.ng</a
+          >.
+        </p>
+        <p>
+          Best regards, <br />
+          GWL Branding Services, <br />
+          Customer Support Team
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

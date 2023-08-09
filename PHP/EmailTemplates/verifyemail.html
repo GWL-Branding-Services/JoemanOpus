@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Account Verification</title>
+</head>
+<body>
+    <table style="max-width: 600px; margin: 0 auto; padding: 20px;">
+        <tr>
+            <td style="background-color: #f8f8f8; padding: 20px; text-align: center;">
+                <h2>Account Verification</h2>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 20px;">
+                <p>Hello, {{firstName}},</p>
+                <p>Thank you for registering an account. Please click the link below to verify your email:</p>
+                <p><a href="{{verificationLink}}">Verify Email</a></p>
+                <p>If you didn't request this verification, you can safely ignore this email.</p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
