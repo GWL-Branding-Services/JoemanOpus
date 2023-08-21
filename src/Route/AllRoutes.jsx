@@ -4,7 +4,15 @@ import Home from "../Pages/Website/HomePage/Home";
 import ErrorBoundary from "../components/error/ErrorBoundary";
 import { Dashboard, DashboardIndex } from "../Pages/Admin/pages";
 import { useAuth } from "../context/AuthContext";
-import { ForgotPassword, Login, Register, ResetPassword, Verify } from "../Pages/Auth";
+import {
+  ForgotPassword,
+  Login,
+  Register,
+  ResetPassword,
+  Verify,
+} from "../Pages/Auth";
+import AllProducts from "../Pages/Website/AllProducts/AllProducts";
+import ProductDetailPage from "../Pages/Website/Product Details/ProductDetailPage";
 
 function AllRoutes() {
   const { userLoggedIn, users } = useAuth();
@@ -28,7 +36,29 @@ function AllRoutes() {
         <Route path="forgot" element={<ForgotPassword />} />
         <Route path="reset" element={<ResetPassword />} />
         <Route path="verify" element={<Verify />} />
+
+        {/* Shop Routes */}
+
+        <Route
+          path="product/:cat/:sub"
+          element={
+            <ErrorBoundary>
+              <AllProducts />
+            </ErrorBoundary>
+          }
+        />
+        
+        <Route
+        path="details/:cat/:id"
+        element={
+          <ErrorBoundary>
+            <ProductDetailPage />
+          </ErrorBoundary>
+        }
+      />
       </Route>
+
+      
       <Route
         path="/dashboard"
         element={userLoggedIn === true ? <DashboardIndex /> : <Login />}

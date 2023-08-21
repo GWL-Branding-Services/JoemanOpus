@@ -1,1 +1,6 @@
 export {default as Hero} from './Hero'
+export {default as Welcome} from './Welcome'
+export {default as Offer} from './Offer'
+export {default as Features} from './features'
+export {default as BeginJourney} from './BeginJourney'
+export {default as Products} from './Products'
