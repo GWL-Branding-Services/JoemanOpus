@@ -16,9 +16,7 @@ import { ProductCard } from "../../../../components";
 function Landing() {
   const { products } = useAuth();
 
-  const filteredProduct =
-    (products && products.filter((prod) => Number(prod.recent) === 1)) ||
-    dummyProduct;
+  const filteredProduct = products || dummyProduct;
 
   console.log();
 

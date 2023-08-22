@@ -90,8 +90,6 @@ function AllProducts() {
       <th style={{ color: "white" }}>S/N</th>
       <th style={{ color: "white" }}>Product name</th>
       <th style={{ color: "white" }}>Price</th>
-      <th style={{ color: "white" }}>Category</th>
-      <th style={{ color: "white" }}>Sub Category</th>
       <th style={{ color: "white" }}>Stock</th>
       <th style={{ color: "white" }}>Product Settings</th>
     </tr>
@@ -125,8 +123,6 @@ function AllProducts() {
           <td className="">
             ₦{Intl.NumberFormat("en-US").format(product.price)}
           </td>
-          <td>{product.category}</td>
-          <td>{product.sub_category}</td>
           <td>
             {product.inStock === "1" ? (
               <Badge className="cursor-pointer" color="green">

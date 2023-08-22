@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { extraInfo } from "../../../Data/GeneralData";
-import { IconCaretRight  } from '@tabler/icons-react';
+import { IconAlignLeft, IconCaretRight  } from '@tabler/icons-react';
 
 export default function ExtraInfo({ product }) {
   const [openSubMenuIndex, setOpenSubMenuIndex] = useState(-1);
@@ -34,7 +34,7 @@ export default function ExtraInfo({ product }) {
           onClick={() => openSubMenu(index)}
         >
           <div className="flex gap-4 cursor-pointer">
-            <IconCaretRight className="w-7 h-7" />
+            <IconAlignLeft className="w-7 h-7" />
             <div className="mt-[2px] uppercase font-semibold">
               {info.heading}
             </div>

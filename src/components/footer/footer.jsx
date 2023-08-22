@@ -73,10 +73,10 @@ export default function Footer() {
   
 
   const contactLinks = contactInfo.map((info, index) => (
-    <Tooltip key={index} label={info.label}>
+    <Tooltip key={index} label={info.label} className="">
       <Link
         to={info.href}
-        className="hover:text-gwltheme"
+        className="hover:text-gwltheme transition duration-300 hover:scale-110"
         target="_blank" 
         rel="noopener noreferrer" // Recommended for security reasons
       >
@@ -94,7 +94,7 @@ export default function Footer() {
             <p>Joseman Opus</p>
           </span>
         </Link>
-        <div className="flex space-x-6 max-md:mt-4 max-md:-ml-5">{contactLinks}</div>
+        <div className="flex gap-6 max-md:mt-4 max-md:-ml-5">{contactLinks}</div>
         <Group
           className={`${classes.links} px-4`}
         >

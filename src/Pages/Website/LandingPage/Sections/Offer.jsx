@@ -7,7 +7,7 @@ import {
     Container,
     rem,
   } from '@mantine/core';
-  import { IconGauge, IconUser } from '@tabler/icons-react';
+  import { IconMusic, IconVolume2 } from '@tabler/icons-react';
 import { buttonTheme } from '../../../../Data/GeneralData';
   
   const mockdata = [
@@ -15,13 +15,13 @@ import { buttonTheme } from '../../../../Data/GeneralData';
       title: 'Viscount Organs - Elevate Your Musical Expression:',
       description:
         "Experience music's allure with Viscount Organs – meticulously crafted for rich, authentic sounds. For musicians of all levels, our range caters to diverse musical preferences.",
-      icon: IconGauge,
+      icon: IconMusic,
     },
     {
       title: 'Enhance the Sound - Premium Speakers for Unrivaled Audio:',
       description:
       "To enhance our Viscount Organs, explore our curated premium speaker range. Elevate your music with clear, amplified notes, perfect for performances, practice, and gatherings.",
-      icon: IconUser,
+      icon: IconVolume2,
     },
   ];
   
@@ -70,7 +70,7 @@ import { buttonTheme } from '../../../../Data/GeneralData';
   }));
   
   export default function Offer() {
-    const { classes, theme } = useStyles();
+    const { classes } = useStyles();
     const features = mockdata.map((feature) => (
       <Card key={feature.title} shadow="md" radius="md" className={classes.card} padding="xl">
         <feature.icon size={rem(50)} stroke={2} className="text-gwltheme" />

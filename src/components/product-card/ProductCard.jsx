@@ -44,7 +44,7 @@ export default function ProductCard({
         <button
           className="bg-gwltheme p-2 rounded-full transition duration-300 hover:bg-white hover:text-black"
           onClick={() => {
-            navigate(`/details/${product.category}/${product.products_id}`);
+            navigate(`/details/${product.products_id}`);
           }}
         >
           Shop Now

@@ -34,13 +34,42 @@ export default function Info({ product }) {
     product.category
   }%0a*▫️Product%20Price:*%20₦%20${Intl.NumberFormat("en-US").format(
     product.promo_price
-  )}%0a*▫️Product%20Quantity:*%20${count}%0a*▫️Product%20Link:*%20${`${process.env.WEB_URL}details/${product.category}/${product.products_id}`}%0a%0a*▫️Total:*%20₦%20${Intl.NumberFormat(
+  )}%0a*▫️Product%20Quantity:*%20${count}%0a*▫️Product%20Link:*%20${`${process.env.WEB_URL}details/${product.products_id}`}%0a%0a*▫️Total:*%20₦%20${Intl.NumberFormat(
     "en-US"
   ).format(totalCount)}`;
   //
   //
   //
   //
+
+  // Function to share the current URL using the Web Share API
+  const shareUrl = async () => {
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: "Check out this product",
+          url: window.location.href,
+        });
+      } else {
+        throw new Error("Web Share API not supported");
+      }
+    } catch (error) {
+      console.error("Error sharing:", error);
+      // Fallback: Copy the URL instead
+      copyUrl();
+    }
+  };
+
+  // // Function to copy the current URL to the clipboard
+  const copyUrl = () => {
+    const textField = document.createElement("textarea");
+    textField.value = window.location.href;
+    document.body.appendChild(textField);
+    textField.select();
+    document.execCommand("copy");
+    textField.remove();
+    toast.success("URL copied to clipboard");
+  };
 
   function sendWhatsapp() {
     window.open(WhatsappBuy, "_blank");
@@ -194,7 +223,12 @@ export default function Info({ product }) {
           Buy Now
         </Button>
       </div>
-      <div className="cursor-pointer flex gap-4 hover:text-gwltheme font-semibold transition duration-300">
+      <div
+        className="cursor-pointer flex gap-4 hover:text-gwltheme font-semibold transition duration-300"
+        onClick={() => {
+          shareUrl(); // Share the URL
+        }}
+      >
         <IconShare className="w-6 h-6" />
         <span>Share</span>
       </div>

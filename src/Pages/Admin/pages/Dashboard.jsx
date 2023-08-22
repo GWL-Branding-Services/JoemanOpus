@@ -77,13 +77,13 @@ function Dashboard() {
         {/*  */}
         {/*  */}
         {/*  */}
-        <Tabs.Tab
+        {/* <Tabs.Tab
           value="category"
           className="  text-white hover:text-slate-950"
           icon={<IconStepInto size="1.8rem" />}
         >
           <p className="hidden md:flex">Category Manager</p>
-        </Tabs.Tab>
+        </Tabs.Tab> */}
         {/*  */}
         {/*  */}
         {/*  */}

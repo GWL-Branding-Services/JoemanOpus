@@ -48,8 +48,8 @@ function AllRoutes() {
           }
         />
         
-        <Route
-        path="details/:cat/:id"
+      <Route
+        path="details/:id"
         element={
           <ErrorBoundary>
             <ProductDetailPage />

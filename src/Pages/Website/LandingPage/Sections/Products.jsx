@@ -9,7 +9,7 @@ import { Heading } from "../../../../components";
 
 
 
-export default function Featured({ prod }) {
+export default function Products({ prod }) {
   const renderedProducts = getRandomProducts(prod && prod, 10);
   function getRandomProducts(arr, num) {
     const shuffled = arr.sort(() => 0.5 - Math.random());
@@ -24,7 +24,7 @@ export default function Featured({ prod }) {
       <Carousel
         withIndicators
         withKeyboardEvents
-        className=" overflow-hidden mt-3 c-wsidth"
+        className=" overflow-hidden mt-3 "
         dragFree
         slideSize="13%"
         loop={renderedProducts && renderedProducts.length > 10 ? true : false}
@@ -34,8 +34,6 @@ export default function Featured({ prod }) {
           { maxWidth: "md", slideSize: "50%" },
           { maxWidth: "sm", slideSize: "50%", slideGap: 0 },
         ]}
-        
-        
       >
         {renderedProducts &&
           renderedProducts.map((products, index) => (

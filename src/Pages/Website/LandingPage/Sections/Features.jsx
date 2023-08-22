@@ -52,7 +52,7 @@ export default function Features() {
     <div className={`bg-gray-100 mt-32 ${classes.wrapper}`}>
       <Text className={`text-center pb-8 font-extrabold text-[2rem] leading-[30px]`} >Why Choose Joeman Opus</Text>
       {features.map((feature, index) => (
-        <Grid gutter={80} className={`${feature.style}`} key={index}>
+        <Grid gutter={80} className={`${feature.style} lg:mt-5`} key={index}>
         <Col span={12} md={5}>
           <Title className={classes.title} order={2}>
             {feature.title}
@@ -65,7 +65,7 @@ export default function Features() {
           <img
             src={feature.image}
             alt="Feature Image"
-            className="h-[75%] w-[100%] object-cover rounded-lg"
+            className="h-[75%] w-[100%] object-cover rounded-lg lg:h-[280px]"
           />
         </Col>
       </Grid>
