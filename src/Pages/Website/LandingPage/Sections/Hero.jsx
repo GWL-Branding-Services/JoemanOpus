@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Image, Button } from "@mantine/core";
 import React from "react";
 import { ImageCollection } from "../../../../assets";
@@ -67,7 +68,7 @@ function Hero() {
           {/* <div className="absolute top-0 left-0 w-full h-full bg-black opacity-10" /> */}
           <div className="absolute bottom-0  -left-96 md:-left-8  md:right-64   w-[100rem] md:w-[100rem] h-[100rem] bg-gradient-to-b from-black transform -rotate-90 to-transparent opacity-90 md:opacity-90" />
 
-          <div className="px-10 md:px-20 absolute top-48 md:top-48 left-0 p-8 text-white">
+          <div className="px-10 md:px-20 absolute top-40 md:top-36 left-0 p-8 text-white">
             <h2 className="text-[40px] leading-10 md:text-6xl md:w-[35rem] w-[19rem] font-bold">
               {slide.text}
             </h2>

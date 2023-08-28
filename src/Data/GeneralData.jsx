@@ -1,15 +1,12 @@
+/* eslint-disable no-undef */
 // GENERAL DATA FILE
 
 const dummyProduct = [
   {
-    price: 5000,
-    promo_price: 3000,
     name: "Loading...",
     products_id: 2,
     rating: 3,
     // img: "load.gif",
-    category: "Clothing",
-    sub_category: "Women",
     inStock: 1,
     detail:
       "This is showing due to unstable internet services. Kindly reload the site and head to the homepage for better results",
@@ -98,7 +95,7 @@ const ratingData = [
 
 // Button Theme Data
 const buttonTheme = {
-  primary: "#581C87",
+  primary: "#693813",
   secondary: "#E111F2",
 };
 const navigationLeft = [
@@ -108,7 +105,7 @@ const navigationLeft = [
 ];
 const navigationRight = [
   { name: "Home", href: "/" },
-  { name: "Shop", href: "#!" },
+  { name: "Shop", href: "/product/Shop/All Products" },
   { name: "Whatsapp Us", href: `https://api.whatsapp.com/send?phone=234${
     process.env.PHONE_NUMBER
   }&text=Hello!` },
@@ -120,6 +117,15 @@ const subscriptionPlan = [
   { value: "Master", label: "Master" },
 ];
 
+const extraInfo = [
+  {
+    heading: "Details",
+    subMenu2: [{}],
+    id: 1,
+  },
+ 
+];
+
 export {
   boolList,
   dummyProduct,
@@ -128,4 +134,5 @@ export {
   navigationLeft,
   navigationRight,
   subscriptionPlan,
+  extraInfo,
 };

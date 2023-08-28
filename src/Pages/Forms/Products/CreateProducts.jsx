@@ -177,7 +177,7 @@ function CreateProducts() {
                     formProps={form.getInputProps}
                     required={true}
                   />
-                  <FormSelect
+                  {/* <FormSelect
                     searchable={true}
                     formProps={form.getInputProps}
                     icon={<IconSelect size="1rem" />}
@@ -201,7 +201,7 @@ function CreateProducts() {
                     label="Product sub-category"
                     data={subCategoryDropDown}
                     required={true}
-                  />
+                  /> */}
                 </div>
                 {/*  */}
                 {/*  */}
