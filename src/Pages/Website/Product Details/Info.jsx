@@ -144,17 +144,25 @@ export default function Info({ product }) {
         {product.name}
       </p>
 
+      <div className="flex gap-3">
+        <div className="text-gwltheme font-semibold text-3xl">
+          ₦{Intl.NumberFormat("en-US").format(Number(product.promo_price))}
+        </div>
+        {/* <div className="text-gray-400 font-semibold text-[13px] line-through mt-[0.5em]">
+          ₦{Intl.NumberFormat("en-US").format(Number(product.price))}
+        </div> */}
+      </div>
       <div className="flex gap-x-4 items-center">
         <div
           className={` ${
             Number(product.inStock) !== 1
               ? "bg-red-600 text-white"
               : "bg-gray-300 text-gwltheme"
-          } px-2 rounded-sm  text-sm py-1 font-semibold`}
+          } px-2 rounded-sm  text-xs py-1 font-semibold`}
         >
           {Number(product.inStock) !== 1 ? "Out of Stock" : "In Stock"}
         </div>
-        <div className="flex w-[120px] h-5 text-[20px] cursor-pointer text-yellow-300">
+        <div className="flex w-[120px] h-5 text-[10px] cursor-pointer text-yellow-300">
           {(() => {
             const arra = product && product.rating;
             const ratingStar = [];
@@ -164,21 +172,13 @@ export default function Info({ product }) {
             return ratingStar;
           })()}
         </div>
-        <span className="text-[11px] text-gray-400 ml-[-10px] mt-[3px]">
+        {/* <span className="text-[11px] text-gray-400 ml-[-10px] mt-[3px]">
           2,130 reviews
-        </span>
+        </span> */}
       </div>
 
-      <div className="flex gap-3">
-        <div className="text-gwltheme font-semibold text-3xl">
-          ₦{Intl.NumberFormat("en-US").format(Number(product.promo_price))}
-        </div>
-        <div className="text-gray-400 font-semibold text-[13px] line-through mt-[0.5em]">
-          ₦{Intl.NumberFormat("en-US").format(Number(product.price))}
-        </div>
-      </div>
       <div className="flex flex-col gap-4"></div>
-      <div className="flex justify-between">
+      {/* <div className="flex justify-between">
         <div className="border py-2 px-2 flex gap-4">
           <button
             className={`flex justify-center items-center w-6 h-6 ${
@@ -202,6 +202,15 @@ export default function Info({ product }) {
             +
           </button>
         </div>
+      </div> */}
+      <div
+        className="cursor-pointer flex gap-4 hover:text-gwltheme font-semibold transition duration-300"
+        onClick={() => {
+          shareUrl(); // Share the URL
+        }}
+      >
+        <IconShare className="w-6 h-6" />
+        <span>Share</span>
       </div>
       <div>
         <Button
@@ -217,20 +226,11 @@ export default function Info({ product }) {
           disabled={Number(product.inStock) !== 1 ? true : false}
           className={` ${
             Number(product.inStock) !== 1 ? "bg-slate-300 text-slate-600" : ""
-          } my-4 bg-white hover:border hover:border-gwltheme  hover:bg-gwltheme hover:text-white relative top-0 hover:top-3 duration-500 transition-all 
+          } my-4 bg-gwltheme-light hover:border hover:border-gwltheme  hover:bg-gwltheme  text-white relative top-0 hover:top-3 duration-500 transition-all 
           ease-in-out `}
         >
-          Buy Now
+          Contact Seller
         </Button>
-      </div>
-      <div
-        className="cursor-pointer flex gap-4 hover:text-gwltheme font-semibold transition duration-300"
-        onClick={() => {
-          shareUrl(); // Share the URL
-        }}
-      >
-        <IconShare className="w-6 h-6" />
-        <span>Share</span>
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ export default {
     extend: {
  colors: { 
         "gwltheme": "#693813",
-        "gwltheme-light": "#9333EA", 
+        "gwltheme-light": "#cf6b20", 
         "gwltheme-accent": "#fd7e14"
       },
       screens: {

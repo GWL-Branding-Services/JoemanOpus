@@ -26,7 +26,7 @@ function NavBar() {
         >
           <span className="h-8 w-auto text-xl  text-white font-light">
             <Image src={ImageCollection.logo} width={100} />
-            <p>Joseman Opus</p>
+            <p>Joeman Opus</p>
           </span>
         </div>
         <div
@@ -38,7 +38,7 @@ function NavBar() {
           <a href="#" className="-m-1.5 p-1.5">
             <span className="h-8 w-auto text-xl  text-white font-light">
               <Image src={ImageCollection.logo} width={170} />
-              <p>Joseman Opus</p>
+              <p>Joeman Opus</p>
             </span>
           </a>
         </div>
@@ -89,7 +89,7 @@ function NavBar() {
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only "></span>
               <Image src={ImageCollection.logo} width={100} />
-              <p>Joseman Opus</p>
+              <p>Joeman Opus</p>
             </a>
             <button
               type="button"

@@ -12,7 +12,7 @@ import { IconAt, IconKey, IconPhone, IconUser } from "@tabler/icons-react";
 import axios from "axios";
 import { Register_API } from "../../API/API";
 import { IconSelect } from "@tabler/icons-react";
-import { subscriptionPlan } from "../../Data/GeneralData";
+// import { subscriptionPlan } from "../../Data/GeneralData";
 import { buttonTheme } from "../../Data/GeneralData";
 import { toast } from "react-toastify";
 
@@ -26,7 +26,7 @@ function Register() {
       Password: "",
       CPassword: "",
       Phonenumber: "",
-      Subscription: "",
+      // Subscription: "",
       Checkbox: "",
       Email: "",
     },
@@ -57,7 +57,7 @@ function Register() {
     formData.append("email", form.values.Email);
     formData.append("number", form.values.Phonenumber);
     formData.append("password", form.values.Password);
-    formData.append("subscription", form.values.Subscription);
+    // formData.append("subscription", form.values.Subscription);
     if (form.validate().hasErrors) {
       toast.error(`Opps! Something isn't right.`);
       setLoader(false);
@@ -86,16 +86,11 @@ function Register() {
       }
     }
   };
-  //   const data =
-  //   SubscriptionPlan === null || SubscriptionPlan === undefined
-  //     ? []
-  //     : SubscriptionPlan.map((_, index) => {
-  //         return `${_.category} `;
-  //       });
+  //  
 
   return (
     <div>
-      <div className=" h-auto mt-3 mb-9 flex justify-center items-center">
+      <div className=" h-auto mt-20 mb-9 flex justify-center items-center">
         <form
           className="w-96  md:px-9 h-auto container m-4"
           onSubmit={handleSubmit}
@@ -146,7 +141,7 @@ function Register() {
             formProps={form.getInputProps}
             required={true}
           />
-          <FormSelect
+          {/* <FormSelect
             searchable={true}
             formProps={form.getInputProps}
             icon={<IconSelect size="1rem" />}
@@ -156,7 +151,7 @@ function Register() {
             label="Subscription plan"
             // data={data}
             data={subscriptionPlan}
-          />
+          /> */}
           {/* Passsword */}
           <div className=" md:grid grid-cols-2  gap-4">
             <FormPassword

@@ -23,11 +23,11 @@ function CreateProducts() {
       Product_name: "",
       Product_category: "",
       Product_sub_category: "",
-      Product_recent: "",
-      Product_price: "",
+      Product_recent: "1",
+      Product_price: 9,
       Product_promo_price: "",
       Product_rating: "",
-      Product_trending: "",
+      Product_trending: "1",
       Product_url: "",
       Product_inStock: "",
       Product_detail: "",
@@ -202,13 +202,25 @@ function CreateProducts() {
                     data={subCategoryDropDown}
                     required={true}
                   /> */}
+                  <FormInput
+                    // disabled={form.values.Product_price === "" ? true : false}
+                    className="my-2"
+                    withAsterisk={true}
+                    label="Price"
+                    placeHolder="Enter Price"
+                    type="number"
+                    // icon={<IconUser size="1rem" />}
+                    inputName="Product_promo_price"
+                    formProps={form.getInputProps}
+                    required={true}
+                  />
                 </div>
                 {/*  */}
                 {/*  */}
                 {/*  */}
                 <div className="">
                   <div className="flex flex-col md:flex-row md:gap-4">
-                    <FormInput
+                    {/* <FormInput
                       className="my-2"
                       withAsterisk={true}
                       label="Product price"
@@ -218,19 +230,7 @@ function CreateProducts() {
                       inputName="Product_price"
                       formProps={form.getInputProps}
                       required={true}
-                    />
-                    <FormInput
-                      disabled={form.values.Product_price === "" ? true : false}
-                      className="my-2"
-                      withAsterisk={true}
-                      label="Discounted price"
-                      placeHolder="Enter discounted price"
-                      type="number"
-                      // icon={<IconUser size="1rem" />}
-                      inputName="Product_promo_price"
-                      formProps={form.getInputProps}
-                      required={true}
-                    />
+                    /> */}
                   </div>
 
                   <FormSelect
@@ -245,7 +245,7 @@ function CreateProducts() {
                     data={ratingData}
                   />
 
-                  <FormSelect
+                  {/* <FormSelect
                     required={true}
                     searchable={!true}
                     formProps={form.getInputProps}
@@ -255,9 +255,9 @@ function CreateProducts() {
                     inputName="Product_recent"
                     label="Recent product"
                     data={boolList}
-                  />
+                  /> */}
 
-                  <FormSelect
+                  {/* <FormSelect
                     searchable={true}
                     formProps={form.getInputProps}
                     icon={<IconSelect size="1rem" />}
@@ -267,7 +267,7 @@ function CreateProducts() {
                     required={true}
                     label="Product trending"
                     data={boolList}
-                  />
+                  /> */}
                   <FormSelect
                     searchable={true}
                     formProps={form.getInputProps}

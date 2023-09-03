@@ -96,26 +96,17 @@ const ratingData = [
 // Button Theme Data
 const buttonTheme = {
   primary: "#693813",
-  secondary: "#E111F2",
+  secondary: "#cf6b20",
 };
-const navigationLeft = [
-  { name: "The City", href: "#!" },
-  { name: "Residence", href: "#!" },
-  { name: "The Developer", href: "#!" },
-];
+ 
 const navigationRight = [
   { name: "Home", href: "/" },
-  { name: "Shop", href: "/product/Shop/All Products" },
-  { name: "Whatsapp Us", href: `https://api.whatsapp.com/send?phone=234${
+  { name: "Products", href: "/product/Shop/All Products" },
+  { name: "Contact Us", href: `https://api.whatsapp.com/send?phone=234${
     process.env.PHONE_NUMBER
   }&text=Hello!` },
 ];
-
-// Subscription Plan Data
-const subscriptionPlan = [
-  { value: "Basic", label: "Basic" },
-  { value: "Master", label: "Master" },
-];
+ 
 
 const extraInfo = [
   {
@@ -130,9 +121,7 @@ export {
   boolList,
   dummyProduct,
   ratingData,
-  buttonTheme,
-  navigationLeft,
-  navigationRight,
-  subscriptionPlan,
+  buttonTheme, 
+  navigationRight, 
   extraInfo,
 };
