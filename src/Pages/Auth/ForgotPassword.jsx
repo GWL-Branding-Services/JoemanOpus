@@ -61,7 +61,7 @@ function ForgotPassword() {
 
   return (
     <div>
-      <div className=" h-auto mt-3 mb-9 flex justify-center items-center">
+      <div className=" h-auto mt-20 mb-9 flex justify-center items-center">
         <form
           className="w-96  md:px-9 h-auto container m-4"
           onSubmit={handleSubmit}

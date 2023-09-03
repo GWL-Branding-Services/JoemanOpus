@@ -125,7 +125,7 @@ function UpdateProducts({ close, productId, products }) {
               />
 
               <div className="flex flex-col md:flex-row md:gap-4">
-                <FormInput
+                {/* <FormInput
                   className="my-2"
                   withAsterisk={true}
                   label="Product price"
@@ -135,22 +135,22 @@ function UpdateProducts({ close, productId, products }) {
                   inputName="Product_price"
                   formProps={form.getInputProps}
                   required={true}
-                />
+                /> */}
+              </div>
                 <FormInput
-                  disabled={form.values.Product_price === "" ? true : false}
+                  // disabled={form.values.Product_price === "" ? true : false}
                   className="my-2"
                   withAsterisk={true}
-                  label="Discounted price"
-                  placeHolder="Enter discounted price"
+                  label="Price"
+                  placeHolder="Enter price"
                   type="number"
                   // icon={<IconUser size="1rem" />}
                   inputName="Product_promo_price"
                   formProps={form.getInputProps}
                   required={true}
                 />
-              </div>
 
-              <FormSelect
+              {/* <FormSelect
                 searchable={true}
                 formProps={form.getInputProps}
                 icon={<IconSelect size="1rem" />}
@@ -170,7 +170,7 @@ function UpdateProducts({ close, productId, products }) {
                 label="Product sub-category"
                 data={subCategoryDropDown}
                 // data={Category}
-              />
+              /> */}
               <FormSelect
                 searchable={true}
                 formProps={form.getInputProps}
@@ -181,8 +181,6 @@ function UpdateProducts({ close, productId, products }) {
                 label="Product Stock"
                 data={boolList}
               />
-            </div>
-            <div className="">
               <FormInput
                 className="my-2"
                 withAsterisk={true}
@@ -193,6 +191,8 @@ function UpdateProducts({ close, productId, products }) {
                 formProps={form.getInputProps}
                 required={true}
               />
+            </div>
+            <div className="">
               <ImageUpload setProfileImage={setProfileImage} />
               <div className="my-3">
                 <FormButton

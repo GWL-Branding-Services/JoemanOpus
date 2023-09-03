@@ -72,6 +72,17 @@ function AuthContextProvider({ children }) {
 
   //
   //
+    // LOGOUT
+  //
+  const logout = () => {
+    toast.success("Logged Out Successfully.");
+    localStorage.removeItem("user");
+    localStorage.removeItem("loggedIn");
+    setTimeout(() => {
+      window.location.replace("/login");
+    }, 2500);
+  };
+  //
 
   const getProduct = async () => {
     try {
@@ -285,6 +296,7 @@ function AuthContextProvider({ children }) {
     categoryDropDown,
     refreshSite,
     //
+    logout,
     // TOKEN
     token,
     encryptData,

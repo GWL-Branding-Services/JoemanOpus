@@ -55,9 +55,9 @@ function ProductDetailPage() {
             <ExtraInfo product={product} />
           </div>
         </div>
-        <div>
+        {/* <div>
           <RelatedProducts />
-        </div>
+        </div> */}
       </div>
     </>
   );

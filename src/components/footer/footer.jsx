@@ -14,6 +14,7 @@ import { navigationRight } from "../../Data/GeneralData";
 const useStyles = createStyles((theme) => ({
   footer: {
     marginTop: rem(120),
+    paddingBottom: rem(39),
     borderTop: `${rem(1)} solid ${
       theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[2]
     }`,
@@ -91,7 +92,7 @@ export default function Footer() {
         <Link className="-m-1.5 p-1.5" to="/">
           <span className="h-8 w-auto text-xl font-light">
             <Image src={ImageCollection.logo} width={170} />
-            <p>Joseman Opus</p>
+            <p>Joeman Opus</p>
           </span>
         </Link>
         <div className="flex gap-6 max-md:mt-4 max-md:-ml-5">{contactLinks}</div>

@@ -121,7 +121,7 @@ function AllProducts() {
             </span>
           </td>
           <td className="">
-            ₦{Intl.NumberFormat("en-US").format(product.price)}
+            ₦{Intl.NumberFormat("en-US").format(product.promo_price)}
           </td>
           <td>
             {product.inStock === "1" ? (

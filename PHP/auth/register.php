@@ -30,7 +30,7 @@ $last_name = $_POST['last_name'];
 $email = $_POST['email'];
 $number = $_POST['number'];
 $password = $_POST['password'];
-$subscription = $_POST['subscription'];
+// $subscription = $_POST['subscription'];
 // $status = $_POST['status'];
 // Generate a random verification token
 $verificationToken = bin2hex(random_bytes(32));
@@ -90,8 +90,8 @@ if ($resultEmail->num_rows > 0) {
 } else {
     // Insert the new user into the database
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    $sqlInsertUser = "INSERT INTO users (first_name, last_name, email, number, password, role, subscription, verification_token) 
-    VALUES ('$first_name', '$last_name', '$email', '$number', '$hashedPassword', '$role', '$subscription', '$verificationToken')";
+    $sqlInsertUser = "INSERT INTO users (first_name, last_name, email, number, password, role,   verification_token) 
+    VALUES ('$first_name', '$last_name', '$email', '$number', '$hashedPassword', '$role',  '$verificationToken')";
 
     if ($db_conn->query($sqlInsertUser) === TRUE) {
         $response = array(

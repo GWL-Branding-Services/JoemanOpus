@@ -77,18 +77,10 @@ function Login() {
         setLoader(false);
       }
     }
-  };
-console.log(userLoggedIn)
-  //   const data =
-  //   SubscriptionPlan === null || SubscriptionPlan === undefined
-  //     ? []
-  //     : SubscriptionPlan.map((_, index) => {
-  //         return `${_.category} `;
-  //       });
-
+  }; 
   return (
     <div>
-      <div className=" h-auto mt-3 mb-9 flex justify-center items-center">
+      <div className=" h-auto mt-20 mb-9 flex justify-center items-center">
         <form
           className="w-96  md:px-9 h-auto container m-4"
           onSubmit={handleSubmit}
@@ -147,14 +139,14 @@ console.log(userLoggedIn)
             loading={loader}
           />
 
-          <div className="text-center">
+          {/* <div className="text-center">
             <h6>
               Don't have an account?
               <Link className="mx-3 hover:text-orange-600" to="/register">
                 Register
               </Link>
             </h6>
-          </div>
+          </div> */}
         </form>
       </div>
     </div>

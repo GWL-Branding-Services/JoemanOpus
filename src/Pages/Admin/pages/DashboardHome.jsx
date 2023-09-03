@@ -2,28 +2,40 @@ import React from "react";
 import { useAuth } from "../../../context/AuthContext";
 import { IconBoxAlignBottomFilled } from "@tabler/icons-react";
 import { IconBox } from "@tabler/icons-react";
-import { Center, RingProgress } from "@mantine/core";
+import { Button, Center, RingProgress } from "@mantine/core";
 import { buttonTheme } from "../../../Data/GeneralData";
+import { IconLogout2 } from "@tabler/icons-react";
 
 function DashboardHome() {
-  const { currentUser } = useAuth();
+  const { currentUser, logout } = useAuth();
+   const confirmLogout = () => {
+    if (window.confirm(currentUser.first_name + " do you want to logout?")) {
+      logout();
+    }
+  };
   return (
     <div className="mt-32 md:mt-10 px-20 flex flex-col justify-center items-center ">
       <div className="flex flex-col sm:flex-row w-full my-7 justify-between items-center">
-        <h2 className="text-2xl font-bold tracking-tight   text-white sm:text-4xl">
-          Dashboard
-        </h2>
-        <p className="text-lg font-thin tracking-tight   text-white ">
-          Hello <b className="cursor-pointer" >{currentUser.first_name}</b>
-        </p>
-      </div>
+          <h2 className="text-2xl font-bold tracking-tight mb-5 text-white sm:text-4xl">
+            Dashboard
+          </h2>
+          <div className="flex items-center">
+            <p className="text-lg font-thin tracking-tight   text-white ">
+              Hello <b className="cursor-pointer">{currentUser.first_name}</b>
+            </p>
+            <Button color="red" onClick={confirmLogout}>
+              <IconLogout2 size={23} className="mx-1" color="white" />
+              Logout{" "}
+            </Button>
+          </div>
+        </div>
       <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-7 gap-y-3 justify-center items-center">
         {/*  */}
         {/* pds, Cat, Admins, sbcat */}
-        <InfoCard /> 
+        {/* <InfoCard /> 
         <InfoCard />
         <InfoCard />
-        <InfoCard />
+        <InfoCard /> */}
         {/*  */}
         {/*  */}
       </div>
